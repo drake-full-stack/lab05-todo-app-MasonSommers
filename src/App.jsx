@@ -24,6 +24,10 @@ function App() {
     setTasks(tasks.filter((_, index) => index !== indexToDelete));
   };
 
+  const handleToggle = (indexToToggle) => {
+    console.log(tasks);
+    setTasks(tasks.map((task, index) => index === indexToToggle ? { ...task, completed: !task.completed } : task));
+  };
   // ==== JSX that gets returned =====
   return (
     <div className="container">
